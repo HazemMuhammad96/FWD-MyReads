@@ -10,6 +10,7 @@
 main {
     padding: 16px;
     width: var(--dimenBookWidth);
+    cursor: pointer;
 }
 
 #bookContainer {

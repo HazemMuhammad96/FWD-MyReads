@@ -14,13 +14,17 @@ export default function Book(
 
 
     return (
-        <main>
+        <main >
 
             <div id={classes.bookContainer}>
 
                 <Bookmark id={classes.bookmark} />
 
-                <div id={classes.book}>
+                <div id={classes.book}
+                    onClick={() => {
+                        if (book.previewLink) window.open(book.previewLink, "_blank");
+                    }}
+                >
                     <aside />
                     <div id={classes.cover} style={{ background: book.imageLinks ? `url("${book.imageLinks.thumbnail}")` : "#efe" }} />
                 </div>

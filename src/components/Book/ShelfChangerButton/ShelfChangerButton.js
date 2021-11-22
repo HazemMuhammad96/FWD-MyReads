@@ -3,7 +3,7 @@ import { useShelfsContext } from "../../../contexts/ShelfsContext";
 
 export default function ShelfChangerButton({ book }) {
 
-    const {onShelfChanged} = useShelfsContext()
+    const { onShelfChanged } = useShelfsContext()
 
     function onChange(e) {
         onShelfChanged(book, e.target.value);
@@ -11,7 +11,7 @@ export default function ShelfChangerButton({ book }) {
 
     return (
         <div className="book-shelf-changer">
-            <select onChange={onChange} value={book.shelf}>
+            <select onChange={onChange} value={book.shelf ?? "none"}>
                 <option value="move" disabled>Move to...</option>
                 <option value="currentlyReading">Currently Reading</option>
                 <option value="wantToRead">Want to Read</option>
